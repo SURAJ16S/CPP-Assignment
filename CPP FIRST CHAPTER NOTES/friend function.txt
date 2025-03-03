@@ -1,0 +1,31 @@
+/*
+friend function : special function that can access private and protected members of the class \
+it is not the ember of the class but have access to it 
+
+purpose - you need to access private and protected data of the calss from a non -member function 
+when any particular function need access of particular data fromthe classs
+
+>declaration
+
+class classname{
+  //
+  //
+  friend returntype functioname(parameter);
+};
+
+>definition outside the class
+
+returntype functionname(parameter){
+    //body of the code
+}
+
+>calling 
+
+calling like a normal function without using class name
+
+> creating a friend class 
+class class1{
+    friend class class2;
+};
+
+*/

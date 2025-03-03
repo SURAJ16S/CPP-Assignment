@@ -1,0 +1,157 @@
+//linklist with operations
+/*singly link list*/
+//assignment no 8 DSPS
+#include<iostream>
+using namespace std;
+
+class lms{         //lms = library management system
+    public:
+    string title,author,publisher;
+    int price,quantity;
+    lms *next; //pointing to next node
+    void accept();
+    void display();
+    void search(string tt);
+    void modify();
+    void deletefirst();
+    void deletelast();
+    void deleteAny();
+}*start=NULL, *temp=NULL;  //dynamic object declaration
+
+//accepting th details
+void lms::accept(){
+    lms *nnode;       //newnode is the nnode
+    nnode = new lms;      //dynamic data allocatio
+    cout<<"Enter title : ";
+    cin>>nnode->title;
+    cout<<"Enter author : ";
+    cin>>nnode->author;
+    cout<<"Enter publisher : ";
+    cin>>nnode->publisher;
+    cout<<"Enter price : ";
+    cin>>nnode->price;
+    cout<<"Enter quantity : ";
+    cin>>nnode->quantity;
+    nnode->next=NULL;
+    //single node
+    if(start==NULL){
+        start=nnode;
+        temp=start;
+    }
+    //if present any other node
+    else{
+        temp=start;  
+        while(temp->next!=NULL){ 
+        temp=temp->next;
+        }
+        temp->next=nnode;
+    }
+}
+
+//displaying the details for temp not equal to null
+void lms::display(){
+    int count =0;
+    lms *temp;
+    temp=start;
+    while(temp!=NULL){
+        count++;
+        cout<<"\n"<<temp->title<<"\t"<<temp->author<<"\t"<<temp->publisher<<"\t"<<temp->price<<"\t"<<temp->quantity<<endl;
+        temp = temp->next;  
+    }
+    cout<<"Total Nodes are "<<count<<endl;
+}
+
+
+
+void lms::search(string tt){
+    int flag =0;
+    lms *temp;
+    temp=start;
+    while(temp!=NULL){
+        if(temp->title == tt){
+        flag =1;
+        cout<<"--BOOK PRESENT--";
+        break;
+        }
+    }
+    if(flag!=1){
+        cout<<"Book Not Present";
+    }
+}
+
+void lms::modify(){
+  string tt;
+  cout<<"Enter Title To Modify : ";
+  cin>>tt;
+    lms *temp;
+    temp=start;
+    while(temp!=NULL){
+        if(temp->title == tt){
+cout<<"Enter Title : ";
+cin>>temp->title;
+cout<<"Enter author : ";
+cin>>temp->author;
+cout<<"Enter publisher : ";
+cin>>temp->publisher;
+cout<<"Enter price : ";
+cin>>temp->price;
+cout<<"Enter quantity : ";
+cin>>temp->quantity;
+
+        }
+        else{
+        cout<<"--BOOK NOT PRESENT--";
+        break;    
+        }
+        
+        break;
+    }
+}
+
+void lms::deletefirst(){
+    lms *temp;
+    temp=start;
+}
+
+void lms::deletelast(){
+    
+}
+
+void lms::deleteAny(){
+    
+}
+
+int main(){
+    lms list;      //object
+    string tt;     //string to store title for searching
+    int choice;
+    //infinite loop
+    while(true){
+        cout<<"\nLibrary Management System";
+        cout<<"\n1.Add Book\n2.Display Books\n3.Search Details\n4.Modify\n5.Delete First\n6.Delete Last\n7.Delete Any Node\n8.Exit The Library;";
+        cout<<"Enter your choice: ";
+        cin>>choice;
+        switch(choice){
+            case 1:list.accept(); 
+            break;
+
+            case 2:
+            cout<<"\nTITLE\tAUTHOR\tPUBLISHER\tPRICE\tQUANTITY"<<endl;
+            list.display(); 
+            break;
+            case 3:
+            cout<<"Enter Title To Search : ";
+            cin>>tt;
+            list.search(tt);
+            break;
+            case 4:
+            cout<<"Exiting Program..."<<endl;
+            break;
+            default: 
+            cout<<"Enter A Valid Choice"; 
+            break;
+        }
+    }
+    
+    return 0;   
+}

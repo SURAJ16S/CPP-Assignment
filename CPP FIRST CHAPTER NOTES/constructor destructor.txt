@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+//remove the constructor to print only 1 and 2 
+
+
+class xyz{
+  public:
+  int roll;
+  xyz(){
+      roll=100;
+  }
+  ~xyz(){
+      cout<<"Initialised"<<endl;
+  }
+};
+xyz xy[10];
+int main(){
+    xy[0].roll = 1;
+    xy[1].roll = 2;
+    
+    for(int i = 0 ;xy[i].roll!=0;i++){
+        cout<<xy[i].roll;
+        cout<<"\n";
+    }
+
+    return 0;
+}

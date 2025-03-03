@@ -1,0 +1,45 @@
+pointers:- variable which store the memory address of another variable
+
+*ptr - pointer variable 
+* - dereference operator   -to access the value stored at the pointer's address
+& - addressof   - to get address
+
+always initialize pointer before use (NULL / Valid address)
+The pointer type should match the variable type (e.g., int* for an int).
+can create pointer of almost all the datatype
+
+Dynamic memory: Can allocate memory at runtime.
+syntax 
+ptrvar = new datatype
+
+declaration 
+datatype* ptrvar;
+datatype *ptrvar;
+//above both methods are same
+assigning the values 
+ptrvar = &varname;
+
+#include<iostream>
+using namespace std;
+int main(){
+    int *ptr , x =4 ;
+    ptr=&x;
+    cout<<*ptr<<endl;           //4
+    cout<<ptr<<endl;            //0x7ffe719d1204
+    cout<<&ptr<<endl;           //0x7ffe719d1208
+    int y = *ptr;
+    cout<<y;                    //4 
+
+    return 0;
+}
+
+access value of pointer variable - *pointername
+get the address of variable - &varname
+get address of pointer variable - &pointervariable
+get address stored in the pointer variable - pointervariable
+
+
+Disadvantages of Pointers:
+Complexity: Harder to understand and debug.
+Errors: Wrong use cause crashes (e.g., segmentation faults).
+Memory leaks: Forgetting to free memory causes wastage.

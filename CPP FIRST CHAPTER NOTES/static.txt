@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+class textbook {
+private:
+public:
+    static int count;
+    static void access() {
+      //  count++;
+        cout << "Count is " << count << endl;
+    }
+};
+// Definition and initialization of static member
+int textbook::count = 0;
+int main() {
+    textbook::count++; // Increment the static member
+    textbook::access(); // Call the static member function
+    textbook::count++;
+    textbook::access(); // Call the static member function
+    return 0;
+}
+
+
+/*
+>we need to declare the static member inside the class
+public:
+static returntype varname;
+
+>create a static function to access to static variable 
+
+static returntype functioname(){
+    //access or manipulate or increment
+}
+
+>defining/initialisation of static member
+
+datatype classname::varname= value;  //value to initialisation
+
+> using inside or calling 
+
+classname::varname++;   //for inc/dec
+classnmae::varname;   /dirct accessible if var is public
+classname::functioname();  //function that interact with static (func must be static)
+
+*/

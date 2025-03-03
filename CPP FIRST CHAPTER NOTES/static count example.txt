@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+class test{
+    private:
+    public:
+    static int count;
+    
+    static void get(){
+        count++;
+        cout<<count;
+        cout<<"\n";
+    }
+};
+test t[10];
+int test::count = 0;
+
+int main(){
+    for(int i=0;i<10;i++){
+    t[i].get();
+    }
+    return 0;
+}

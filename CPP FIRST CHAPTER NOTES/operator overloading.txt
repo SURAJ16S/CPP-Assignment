@@ -1,0 +1,149 @@
+Operator Overloading : provides additional meaning to already existing operator is operator overloading . we can achieve compile time polymorphism through it .
+
+rules of operator overloading 
+1. only existing operators can be overloaded , newly created cannot be overloaded
+2. we cannot change the Basic meaning of the operator , for ex. addition operator cannot be used for subtraction
+3. precedence / priority and associativity remains same after overloading of operator
+4. operators that cannot be overloaded - 
+	[1]sizeof()
+	[2]scope resolution operator(::) 
+	[3]conditional operator 
+	[4]class member access operator (. , .*)
+5. There are some operator which we can overload by mean of member function of class but cannot overload by mean of friend function
+     [1]assignment operator (=)
+     [2]function call operator () 
+     [3]subscripting operator []
+     [4]class member access operator (->)
+6. if we are overloading unary operator (++increment+/--decrement-/!,~,&,*) by means of member function of the class , then it takes no argument/zero argument
+and if we are overloading by means of friend function of the class then it takes one argument.
+7. if we are overloading binary operator by means of member function of class then it takes on argument and if we overload by means of friend function then it will take 2 argument
+8. if we are overloading binary operator by means of member function of class then it must have one operator of class type 
+9. if we are overloading binary operator by means of member function of class then its left side operand must be a object of relevant class
+10. if you are overloading binary operator then it explicitly return a value
+
+syntax : 
+returntype operator operatorsign(arguement);
+
+ex.
+
+#include<iostream>
+using namespace std;
+class space{
+int x,y;
+public:
+space(int a , int b){
+x=a;
+y=b;
+}
+void operator-(){
+x=-x;
+y=-y;
+}
+void show(){
+cout<<"x="<<x<<"y="<<y;
+}
+};
+int main(){
+space s(10,20);
+-s;
+space(-10,20);
+-s;
+s.show();
+return 0;
+}
+
+
+
+____________________________________________________
+#include<iostream>
+using namespace std;
+
+class complex{
+    public:
+    int real,img;
+    
+    complex(){
+        real=0;
+        img=0;
+    }
+    complex(int x,int y){
+        real = x;
+        img = y;
+    }
+    
+    void display(){
+        if(img>=0){
+            cout<<real<<"+"<<img<<"i"<<endl;
+        }
+        else{
+            cout<<real<<" "<<img<<"i"<<endl;
+        }
+    }
+    
+    complex operator+(complex c2);
+    friend complex operator-(complex c1,complex c2);
+    complex operator*(complex c2);
+    complex operator/(complex c2);
+}c1,c2,c3;
+
+complex complex::operator+(complex c2){
+    c3.real = real  + c2.real;
+    c3.img = img  + c2.img;
+    return c3;
+}
+
+complex operator-(complex c1,complex c2){
+    
+    c3.real = c1.real - c2.real;
+    c3.img = c1.img - c2.img;
+    return c3;
+}
+
+complex complex::operator*(complex c2){
+    c3.real =real * c2.real-img * c2.img; 
+    c3.img = real * c2.real+img * c2.img; 
+    return c3;
+}
+
+complex complex::operator/(complex c2){
+    c3.real = (real * c2.real+img*c2.img)/(c2.real * c2.real+c2.img*c2.img);
+    c3.img = (real * c2.img+img*c2.real)/(c2.real * c2.real+c2.img*c2.img);
+    return c3;
+}
+
+int main(){
+    int choice;
+    int rn,imgn;
+    do{
+        cout<<"\n1.Accept\t2.Display\t3.exit\nEnter your Choice :";
+        cin>>choice;
+        switch(choice){
+            case 1:
+            cout<<"Enter Real Part For First Number : ";
+            cin>>rn;
+            cout<<"Enter img Part For First Number : ";
+            cin>>imgn;
+            c1=complex(rn,imgn);
+            cout<<"Enter Real Part For Second Number : ";
+            cin>>rn;
+            cout<<"Enter img Part For Second Number : ";
+            cin>>imgn;
+            c2=complex(rn,imgn);
+            break;
+            case 2:
+            c1+c2;
+            c3.display();
+            c1-c2;
+            c3.display();
+            c1*c2;
+            c3.display();
+            c1/c2;
+            c3.display();
+            break;
+            case 3:
+            cout<<"Exiting Program...";
+            break;
+        }
+    }while(choice!=3);
+    return 0;
+}

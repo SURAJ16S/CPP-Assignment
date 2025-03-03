@@ -1,0 +1,52 @@
+Assignment 1    done    LinearSearch
+Assignment 2    done    LibrarySorting
+Assignment 3    done    LinBinSearchAndSort
+Assignment 5    done    PalindromeStringUsingStack
+Assignment 4    done    PostfixToInfixUsingStack
+Assignment 6    done    DoubleEndedQueue(Deque)                                          
+Assignment 7    done    PizzaParlourUsingCQueueUsingStack                                    
+Assignment 8    done    LibaryManagementSystemUsingLinkedList                             
+Assignment 9    done    CharityManagementSystemUsingLinkedList                            
+Assignment 10   done    MusicLibrarySystemUsingcircularLinkedList  -doublylinkedlist                       
+
+1)You are given an integer array 'A' of size 'N', sorted in non-decreasing order. You are also given an integer 'target'. Your task is to write a function to search for 
+'target' in the array 'A'. If it exists, return its index in 0-based indexing using Linear Search.
+
+
+2)College library has N books. Write a C++ program to store the cost of books in an array in ascending order. Books are to be arranged in descending order of their cost. 
+Write functions for:
+    A) Copy costs of books those with cost less than 500 in a new array.
+    a) Delete the duplicate entries using a temporary array.
+    b) Delete duplicate entries without using a temporary array.
+    c) Count the number of books with cost more than 500.
+
+3)Write a C++ program to store roll numbers of students in an array who attended a training program in random order. Write functions for:
+    a) Searching whether a particular student attended the training program or not using Linear Search.
+    OR
+    b) Searching whether a particular student attended the training program or not using Binary Search.
+
+4)Implement a C++ program for expression conversion from infix to postfix using a stack.
+
+5)A palindrome is a string of characters that is the same forward and backward. Typically, punctuation, capitalization, and spaces are ignored. For example, 
+"Poor Dan is in a droop" is a palindrome, as can be seen by examining the characters "poordanisinadroop" and observing that they are the same forward and backward. 
+One way to check for a palindrome is to reverse the characters in the string and then compare with the original—in a palindrome, the sequence will be identical. 
+Write a C++ program with functions to check whether a given string is a palindrome or not that uses a stack to determine whether a string is a palindrome.
+
+6)A double-ended queue (deque) is a linear list in which additions and deletions may be made at either end. Obtain a data representation mapping a deque into a 
+one-dimensional array. Write a C++ program to simulate a deque with functions to add and delete elements from either end of the deque.
+
+7)A pizza parlor accepts a maximum of M orders. Orders are served on a first-come, first-served basis. Order once placed cannot be canceled. Write a C++ program to 
+simulate the system using a queue with an array.
+
+8)A library needs to manage a collection of books (data fields such as book title, author, ISBN, availability status, and other relevant information), maintain 
+information about each book, support operations like adding, removing, and searching for books, and provide efficient access to library resources. Use the concept of 
+Linked List for implementation of the Library Management system.
+
+9)A Charity Management system needs to manage the information about donors, donations, and other relevant data. The system needs to maintain information about each donor. 
+The system should be able to add a new donor, remove the donor, update the information of the donor, search for a specific donor, and display the information of all the 
+donors which are present in the database. Use the concept of the Linked List to implement the above system.
+
+10)A Music Library System is a software application used to manage the storage and retrieval of music tracks and albums. The system needs to maintain information such as
+track title, artist, album, genre, duration, release year, and any other relevant attributes. The system should be able to add a new music track, remove the track, 
+update the information of the track, search for a specific track, and display the information of all the tracks which are present in the database. Use the concept of 
+Circular Linked List to implement the above system.

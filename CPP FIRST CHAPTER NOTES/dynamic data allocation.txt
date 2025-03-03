@@ -1,0 +1,22 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class bank{
+    public:
+    char * name;
+     void accept(char* newname){
+     name = new char;
+     strcpy(name,newname);
+     }
+     void display(){
+         cout<<name;
+     }
+};
+
+bank user[5];
+int main(){
+    user[0].accept("Suraj Bagul");
+    user[0].display();
+    return 0;
+}

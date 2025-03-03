@@ -1,0 +1,50 @@
+Inline Functions in C++ - Notes
+1. Declaration and Definition:
+Inline Keyword: Functions can be declared with the inline keyword.
+Default Inline: Functions defined inside a class are automatically treated as inline.
+Limitations:
+Inline functions cannot be recursive.
+Avoid complex functions with loops and conditionals to prevent code bloat.
+2. Usage:
+Ideal for Small Tasks: Inline functions are best suited for small, frequently called functions where reducing function call overhead is beneficial.
+3. Syntax:
+Declaration and Definition:
+
+inline returnType functionName(parameters) {
+    // Block of code
+}
+Example:
+
+
+inline int add(int a, int b) {
+    return a + b;
+}
+Calling:
+
+Using Object:
+
+
+objectName.functionName();
+Example:
+
+
+int sum = add(5, 3);  // Calls the inline function 'add'
+Inside a Class:
+
+
+class Math {
+public:
+    inline int multiply(int x, int y) {
+        return x * y;
+    }
+};
+
+int main() {
+    Math math;
+    int result = math.multiply(4, 5);  // Calls the inline function 'multiply'
+    return 0;
+}
+Key Points:
+Functions defined within the class body are implicitly inline.
+Use inline functions for simple operations to improve performance and reduce overhead.
+Avoid using inline functions for complex operations to prevent potential drawbacks such as increased binary size.

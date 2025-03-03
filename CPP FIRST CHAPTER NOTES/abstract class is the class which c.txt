@@ -1,0 +1,50 @@
+abstract class is the class which consist of pure virtual function . if we derived a class from the abstract class we need to define the member function , otherwise it will act as abstract class .and we cannot create object of abstract class. etc  
+
+concept of virtual function-function is is declared using keyword virtual adn use for the when animal have sound but sound is differernt can access using the point -> and  and pure virtual function- used when function name is same but inside activity is different suppose we create  function to calculate the area accept area function as pure virtual but all have different values to accept and operate on it  all the tulles related to it and other details 
+operator overloading and overriding detailed 
+
+accesing value 
+__________________________________________________________________________
+
+Abstract Class : class which consist of pure virtual function.
+->if we derived a class from an abstract class then we need to define all the pure virtual function , otherwise the derived class remains abstract
+->we cannot create object of abstract class
+
+->>pure virtual function : function defined by assigning ' =0 ' to the function declaration in the abstract class.
+
+->used when function name is same but inside activity is different 
+:suppose we create a function to calculate the area ,accept area function as pure virtual but all have different values to accept and operate on it 
+
+->virtual function : function declared by using the keyword 'virtual'
+used when : ex animals have sound but all have different sound
+
+--virtual destructor is better choice when using the virtual function
+
+
+
+#include<iostream>
+using namespace std;
+class animal{
+    public:
+    string name;
+    string sound;
+       virtual void accept(){
+           cout<<"Enter Name";
+           cin>>name;
+           cout<<"Enter Sound";
+           cin>>sound;
+       }
+};
+animal test;
+class dog:public animal{
+    public:
+    void accept(){
+        cout<<"hello from dog";
+    }
+};
+dog pom;
+int main(){
+ test.accept();
+ pom.accept();
+    return 0;
+}

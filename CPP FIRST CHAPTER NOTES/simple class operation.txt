@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+class workplace{
+    public:
+    string name;
+    int id;
+
+    void accept(){
+    cout<<"Enter Employee Name : "<<endl;
+    cin>>name;
+    cout<<"Enter Employeeid : "<<endl;
+    cin>>id;
+    }
+    void display(){
+        cout<<name<<"\t"<<id<<endl;
+    }
+};
+
+
+int main(){
+    workplace worker[10];
+    int choice,i=0;
+    do {
+        cout<<"1.Accept\t2.Display\nEnter Your Choice : ";
+        cin>>choice;
+        switch(choice){
+            case 1:
+            if(i<10){
+                worker[i].accept();
+                i++;
+            }
+            else{
+                cout<<"Limit Exceed";
+            }
+            break;
+            case 2:
+            cout<<"Name\tId"<<endl;
+            for(i=0;worker[i].name!="";i++){
+                worker[i].display();
+            }
+            break;
+            default:
+            cout<<"Enter Valid choice";
+        }
+    }while(choice<3);
+    return 0;
+}
